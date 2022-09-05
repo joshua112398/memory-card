@@ -1,0 +1,12 @@
+ORGANIZATION
+==========================
+
+MAIN GAME FUNCTION
+- function to display cards in random order
+- store all types of cards in array
+- each card has indicator if it's been chosen
+
+COMPONENTS
+- card
+- app logic
+- scoreboard
