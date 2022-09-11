@@ -5,6 +5,7 @@ const Card = () => {
 
   const wasClicked = () => {
     setClicked(true);
+    console.log("Clicked");
   };
 
   const wasNotClicked = () => {
@@ -12,7 +13,7 @@ const Card = () => {
   };
 
   return (
-    <div className="card">
+    <div className="card" onClick={wasClicked}>
       <img src="haha" alt="Card"/>
     </div>
   )
