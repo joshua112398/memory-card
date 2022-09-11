@@ -8,23 +8,28 @@ function App() {
 
   useEffect(() => {
     setCards([
-      <Card restartGame={restartGame} nextRound={nextRound}/>,
-      <Card restartGame={restartGame} nextRound={nextRound}/>,
-      <Card restartGame={restartGame} nextRound={nextRound}/>,
-      <Card restartGame={restartGame} nextRound={nextRound}/>,
-      <Card restartGame={restartGame} nextRound={nextRound}/>,
-      <Card restartGame={restartGame} nextRound={nextRound}/>,
-      <Card restartGame={restartGame} nextRound={nextRound}/>,
-      <Card restartGame={restartGame} nextRound={nextRound}/>,
-      <Card restartGame={restartGame} nextRound={nextRound}/>,
-      <Card restartGame={restartGame} nextRound={nextRound}/>,
-      <Card restartGame={restartGame} nextRound={nextRound}/>,
-      <Card restartGame={restartGame} nextRound={nextRound}/> 
-    ])
-  }, []);
+      <Card restartGame={restartGame} nextRound={nextRound} gameStatus={gameStatus}/>,
+      <Card restartGame={restartGame} nextRound={nextRound} gameStatus={gameStatus}/>,
+      <Card restartGame={restartGame} nextRound={nextRound} gameStatus={gameStatus}/>,
+      <Card restartGame={restartGame} nextRound={nextRound} gameStatus={gameStatus}/>,
+      <Card restartGame={restartGame} nextRound={nextRound} gameStatus={gameStatus}/>,
+      <Card restartGame={restartGame} nextRound={nextRound} gameStatus={gameStatus}/>,
+      <Card restartGame={restartGame} nextRound={nextRound} gameStatus={gameStatus}/>,
+      <Card restartGame={restartGame} nextRound={nextRound} gameStatus={gameStatus}/>,
+      <Card restartGame={restartGame} nextRound={nextRound} gameStatus={gameStatus}/>,
+      <Card restartGame={restartGame} nextRound={nextRound} gameStatus={gameStatus}/>,
+      <Card restartGame={restartGame} nextRound={nextRound} gameStatus={gameStatus}/>,
+      <Card restartGame={restartGame} nextRound={nextRound} gameStatus={gameStatus}/> 
+    ]);
+    if (gameStatus === "Restarting") {
+      setGameStatus("Playing");
+      console.log("Change to playing");
+    }
+  }, [gameStatus]);
 
   const restartGame = function() {
-    console.log("Game restarted");
+    console.log("Restarting game");
+    setGameStatus("Restarting");
   }
 
   const nextRound = function() {
