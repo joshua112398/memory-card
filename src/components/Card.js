@@ -21,7 +21,6 @@ const Card = (props) => {
 
   return (
     <div className="card" onClick={wasClicked}>
-      Hi
       <img src={props.img} alt={props.imgAlt}/>
     </div>
   )
