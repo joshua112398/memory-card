@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 
-function Header() {
+function Header(props) {
+
   return (
     <header>
       <h1>MEMORY CARDS</h1>
-      <p>Round: 1 of 12</p>
+      <p>Round: {props.round} of 12</p>
     </header>
   );
 };

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Card from "./Card";
 
-function CardDeck() {
+function CardDeck({incrementRound, changeToFirstRound}) {
 
   const [cards, setCards] = useState([]);
   const [gameStatus, setGameStatus] = useState("Playing");
@@ -12,12 +12,15 @@ function CardDeck() {
       console.log("Restarting game");
       shuffleArray();
       setGameStatus("Restarting");
+      changeToFirstRound();
     }
   
     // shuffles the array and card order when moving to next round
+    // also increments round number by 1
     const nextRound = function() {
       console.log("Move to next round");
       shuffleArray();
+      incrementRound();
     }
 
     setCards([
@@ -34,6 +37,7 @@ function CardDeck() {
       <Card imgAlt="11" key="11" restartGame={restartGame} nextRound={nextRound} gameStatus={gameStatus}/>,
       <Card imgAlt="12" key="12" restartGame={restartGame} nextRound={nextRound} gameStatus={gameStatus}/> 
     ]);
+    shuffleArray();
     if (gameStatus === "Restarting") {
       setGameStatus("Playing");
       console.log("Change to playing");
